@@ -76,3 +76,21 @@
 
 ### 页面布局
 
+每一个页面都有一系列的header来记录本页面的一些基本信息：
+
+两种实现方式：
+
+1. **存储每一行的数据**
+
+为了方便在合适的位置，找到插入的数据，我们为每一个tuple建立了一个id，在页面的slot array数组里面，
+
+![slot_pages](.\pictures\slot_pages.png)
+
+2.  **记录日志**
+
+这种方式是直接记录日志在文件里面，读取的时候，从后往前读，生成tuple。
+
+> 基于日志记录的可以看一下, [WAL 和 LSM ](../unix/WAL&&LSM.md)
+
+![log_structured_file](F:\blog\好好学15445\pictures\log_structured_file.png)
+
